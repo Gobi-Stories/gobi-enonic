@@ -32,3 +32,5 @@ See https://gobistories.com for more information about Gobi Stories.
 1. Click ***Insert***.
 1. Click ***Save*** to save your content.
 1. Publish the content as desired.
+
+Tip: Click within the macro (```[gobi-stories ...]```) then click ***Insert Macro*** again to edit an existing story.
