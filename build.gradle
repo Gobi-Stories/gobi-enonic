@@ -1,0 +1,25 @@
+plugins {
+    id 'com.enonic.xp.app' version '3.0.0'
+}
+
+apply plugin: "com.enonic.xp.app"
+
+app {
+    name = "${appName}"
+    displayName = "${appDisplayName}"
+    vendorName = "${vendorName}"
+    vendorUrl = "${vendorUrl}"
+    systemVersion = "${xpVersion}"
+}
+
+dependencies {
+    include "com.enonic.lib:lib-thymeleaf:2.0.1"
+    compile "com.enonic.xp:portal-api:${xpVersion}"
+    include "com.enonic.xp:lib-portal:${xpVersion}"
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    xp.enonicRepo( 'dev' )
+}

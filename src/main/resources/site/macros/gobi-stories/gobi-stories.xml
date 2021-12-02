@@ -1,0 +1,23 @@
+<macro>
+  <display-name>Gobi</display-name>
+  <description>Insert Gobi Stories into your content</description>
+  <form>
+    <input name="viewKey" type="TextLine">
+      <label>View Key</label>
+    </input>
+    <input name="color" type="TextLine">
+      <label>Color</label>
+      <default>#15d6ea</default>
+    </input>
+    <input name="bubbleSize" type="TextLine">
+      <label>Bubble Size</label>
+      <default>96px</default>
+    </input>
+    <input  name="showPlayIcon" type="CheckBox">
+      <label>Show Play Icon on Bubbles</label>
+      <config>
+        <alignment>right</alignment>
+      </config>
+    </input>
+  </form>
+</macro>
