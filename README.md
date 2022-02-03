@@ -8,7 +8,7 @@ See https://gobistories.com for more information about Gobi Stories.
 
  1. Upload gobistories-<version>.jar to your enonic application installer.
  2. Add the Gobi Stories application to your Site.
- 3. Edit any Rich Text Content and use the Insert Macro button to add a Gobi Story.
+ 3. Edit any Rich Text Content and use the Insert Macro button to add a Gobi Story, or add a part to a page and select Gobi.
 
 ## Detailed start
 
