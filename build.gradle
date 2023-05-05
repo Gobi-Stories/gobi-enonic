@@ -1,8 +1,10 @@
 plugins {
     id 'com.enonic.xp.app' version '3.0.0'
+    id "maven-publish"
 }
 
 apply plugin: "com.enonic.xp.app"
+apply plugin: "maven-publish"
 
 app {
     name = "${appName}"
@@ -12,14 +14,82 @@ app {
     systemVersion = "${xpVersion}"
 }
 
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
 dependencies {
     include "com.enonic.lib:lib-thymeleaf:2.0.1"
-    compile "com.enonic.xp:portal-api:${xpVersion}"
+    implementation "com.enonic.xp:portal-api:${xpVersion}"
     include "com.enonic.xp:lib-portal:${xpVersion}"
+    webjar "org.webjars:momentjs:2.29.1"
 }
 
 repositories {
-    mavenLocal()
     mavenCentral()
     xp.enonicRepo( 'dev' )
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId = 'com.gobistories'
+            version = '1.0.6'
+            artifactId = 'gobistories'
+
+            from components.java
+
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
+
+            pom {
+                name = "${appName}"
+                description = 'Add Gobi Stories story bubbles to your Enonic pages and content'
+                url = 'https://bitbucket.org/gobiapp/gobi-enonic'
+            
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'branggobi'
+                        name = 'branggobi'
+                        email = 'brang.nu@gobistories.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://bitbucket.org/gobiapp/gobi-enonic'
+                    developerConnection = 'scm:git:ssh://bitbucket.org/gobiapp/gobi-enonic.git'
+                    url = 'https://bitbucket.org/gobiapp/gobi-enonic'
+                }
+            }
+        }
+    }
+
+    repositories {
+        maven {
+                url "https://s01.oss.sonatype.org/content/repositories/releases"
+
+                credentials {
+                    username "$nexusUsername"
+                    password "$nexusPassword"
+                }
+            }
+    }
+}
+
+javadoc {
+    if(JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html5', true)
+    }
 }

@@ -1,0 +1,7 @@
+<mixin>
+  <form>
+    <input name="collectionId" type="TextLine" style="display:none;" >
+      <label>Collection Id</label>
+    </input>
+  </form>
+</mixin>
