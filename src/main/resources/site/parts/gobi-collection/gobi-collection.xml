@@ -1,0 +1,7 @@
+<part xmlns="urn:enonic:xp:model:1.0">
+  <display-name>Gobi Collection</display-name>
+  <description>Insert Gobi Stories into your pages</description>
+  <form>
+    <mixin name="gobi-collection"/>
+  </form>
+</part>

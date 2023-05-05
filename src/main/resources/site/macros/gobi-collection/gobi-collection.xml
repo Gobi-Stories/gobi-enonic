@@ -1,0 +1,7 @@
+<macro>
+  <display-name>Gobi Collection</display-name>
+  <description>Insert Gobi Stories into your content</description>
+  <form>
+    <mixin name="gobi-collection"/>
+  </form>
+</macro>
