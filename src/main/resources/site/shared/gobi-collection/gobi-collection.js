@@ -10,7 +10,7 @@ exports.render = (config) => {
         `<script src='https://unpkg.com/@gobistories/gobi-web-integration@^6.13.1' data-cookieconsent="ignore" async onload='gobi.discover()'></script>`,
         '<link rel="stylesheet" href="' +
           portal.assetUrl({
-            path: 'css/gobi-stories.css',
+            path: 'css/gobi-collection.css',
             application: app.name,
           }) +
           '" type="text/css" />',

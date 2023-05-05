@@ -35,7 +35,7 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             groupId = 'com.gobistories'
-            version = '1.0.6'
+            version = "${version}"
             artifactId = 'gobistories'
 
             from components.java
